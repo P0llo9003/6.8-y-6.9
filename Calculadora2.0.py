@@ -53,4 +53,20 @@ def leer_operando():
         except:
             print('Debe ser un número')
 
+while True:
+    opc=menu('Menú Calculadora',['Sumar',"Restar","Multiplicar"])
+    if opc=='4':
+        print('Salir')
+        break
+    a=leer_operando()
+    b=leer_operando()
+    if opc=='1':
+        print(suma(a,b))
+    elif opc=="2":
+        print(resta(a,b))
+    elif opc=="3":
+        print(multiplicacion(a,b))
+    else:
+        print('Opción Inválida')
+
 
