@@ -33,6 +33,18 @@ def multiplicacion(a,b):
     except:
         return None
 
+def division(a,b):
+    try:
+        op1=float(a)
+        op2=float(b)
+        if op2==0:
+            print("No se puede dividir por cero...")
+            return
+        else:
+            return op1/op2
+    except:
+        return None
+
 def leer_operando():
     while True:
         try:
@@ -42,8 +54,8 @@ def leer_operando():
             print('Debe ser un número')
 
 while True:
-    opc=menu('Menú Calculadora',['Sumar',"Restar","Multiplicar"])
-    if opc=='4':
+    opc=menu('Menú Calculadora',['Sumar',"Restar","Multiplicar", "Division"])
+    if opc=='5':
         print('Salir')
         break
     a=leer_operando()
@@ -54,5 +66,7 @@ while True:
         print(resta(a,b))
     elif opc=="3":
         print(multiplicacion(a,b))
+    elif opc=="4":
+        print(division(a,b))
     else:
         print('Opción Inválida')
