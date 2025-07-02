@@ -11,28 +11,48 @@ def menu(titulo,opciones):
 
 def suma(a,b):
     try:
-        op1=int(a)
-        op2=int(b)
+        op1=float(a)
+        op2=float(b)
         return op1+op2
+    except:
+        return None
+    
+def resta(a,b):
+    try:
+        op1=float(a)
+        op2=float(b)
+        return op1-op2
+    except:
+        return None
+    
+def multiplicacion(a,b):
+    try:
+        op1=float(a)
+        op2=float(b)
+        return op1*op2
     except:
         return None
 
 def leer_operando():
     while True:
         try:
-            num=int(input('Ingrese Número: '))
+            num=float(input('Ingrese Número: '))
             return num
         except:
             print('Debe ser un número')
 
 while True:
-    opc=menu('Menú Calculadora',['Sumar'])
-    if opc=='2':
+    opc=menu('Menú Calculadora',['Sumar',"Restar","Multiplicar"])
+    if opc=='4':
         print('Salir')
         break
     a=leer_operando()
     b=leer_operando()
     if opc=='1':
         print(suma(a,b))
+    elif opc=="2":
+        print(resta(a,b))
+    elif opc=="3":
+        print(multiplicacion(a,b))
     else:
         print('Opción Inválida')
